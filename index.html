@@ -2,38 +2,46 @@
 <html>
 	<head>
 		<title>Speed Reader</title>
+		<link rel="stylesheet" href="css\style.css"/> 
 	</head>
 	<body>
 		<div>
 			<h1>Speed Reader</h1>
-			<div id="menu">
+			<div id="menu" class="card">
 				<textarea id="input">This is just some testing text so you can see how the application works and what you can do with it.
 					This is just some testing text so you can see how the application works and what you can do with it.
 					This is just some testing text so you can see how the application works and what you can do with it.
 					This is just some testing text so you can see how the application works and what you can do with it.
 				</textarea>
 				<br/>
-				<button onclick="readClicked()">Read</button>
-				<p>
-					<span>0</span>
-					<input type="range" min="1" max="30" id="speedRange" onchange="changeSpeedRange()"/>
-					</span >60</span>
-				</p>
-				<p id="speedRangeValue">16</p>
-				<br/>
-				<input type="checkbox" id="combineSmallWordsCheckbox" />Combine Small Words
-				<p>
-					<span>0</span>
-					<input type="range" min="1" max="10" id="combineRange" onchange="changeCombineRange()" />
-					</span>10</span>
-				</p>
-				<p id="combineRangeValue">6</p>
+				<button onclick="readClicked()" class="btn btn-menu">Read</button><br/>
+				<div class="option card">
+					<h2>Speed</h2>
+					<p>
+						<span>0</span>
+						<input type="range" min="1" max="30" id="speedRange" onchange="changeSpeedRange()"/>
+						</span >60</span>
+					</p>
+					<p id="speedRangeValue">16</p>
+					<p class="muted">How many words to show per minute</p>
+				</div>
+				<div class="option card">
+					<h2>Combination</h2>
+					<input type="checkbox" id="combineSmallWordsCheckbox" onclick="combineWordsCheckboxClicked()" />Combine Small Words
+					<p>
+						<span>0</span>
+						<input type="range" min="1" max="10" id="combineRange" onchange="changeCombineRange()" disabled/>
+						</span>10</span>
+					</p>
+					<p id="combineRangeValue">6</p>
+					<p class="muted">Max number of letters allowed in one combination (of two words)</p>
+				</div>
+				<p id="message" class="error">Input cannot be empty</p>
 			</div>
-			<div id="reader">
-				<p id="word"></p>
-				<button onclick="stopClicked()">Stop</button>
+			<div id="reader" class="card">
+				<p id="word">Word</p>
+				<button onclick="stopClicked()" class="btn btn-reader">Stop</button>
 			</div>
-			<p id="message"></p>
 		</div>
 		<script src="js\main.js"></script>
 	</body>

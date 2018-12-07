@@ -1,0 +1,70 @@
+html, body{
+	text-align: center;
+}
+
+.btn{
+	width: 80%;
+	margin: 5px;
+	font-size: 1.25em;
+	font-weight: bold;	
+	border-radius: 4px;
+}
+
+.btn-menu{
+	background-color: #4dff4d;
+}
+
+.btn-reader{
+	background-color: #0099cc;
+}
+
+.card{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 5px 10px 8px #888888;
+	padding: 10px;
+	border: 1px black solid;
+	background-color: #f2f2f2;
+}
+
+.option{
+	display: inline-block;
+	margin: 10px;
+	padding: 5px;
+	width: 35%;
+	height: 5%;
+	padding: 15px;
+	padding-top: 0px;
+}
+
+.muted{
+	color: #595959;
+	font-size: 0.75em;
+}
+
+.error{
+	margin: auto;
+	background-color: #ff3333;
+	width: 80%;
+	border-radius: 4px;
+	padding: 1px;
+	display: none;
+	font-size: 1.25em;
+}
+
+#input{
+	margin-top: 10px;
+}
+
+#word{
+	font-size: 3em;
+	font-weight: bold;
+}
+
+#input{
+	width: 80%;
+	height: 175px;
+	resize: vertical;
+}

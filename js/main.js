@@ -3,17 +3,23 @@ showMenu();
 
 /* Button clicks */
 function readClicked(){
+	hideErrorMessage()
 	var inputWords = getElement("input").value;
 	if(isEmpty(inputWords)){
-		// Blank input
-		getElement("message").innerText = "Input cannot be empty";
+		displayErrorMessage();
 	}else{
 		startSpeedReader(inputWords);
 	}
 }
 
 function stopClicked(){
+	hideErrorMessage()
 	stopSpeedReader();
+}
+
+function combineWordsCheckboxClicked(){
+	var checked = getElement("combineSmallWordsCheckbox").checked;
+	getElement("combineRange").disabled = !checked;
 }
 
 /* Range value change handlers */
@@ -48,13 +54,14 @@ function startSpeedReader(text){
 			var currentWord = words[currentIndex];
 			// Check combine word
 			if(combineWords){
-				if((currentWord + " " + words[currentIndex+1]).length <= combineLength){
+				var twoWords = currentWord + " " + words[currentIndex+1]
+				if(twoWords.length <= parseInt(combineLength) + 1){
 					currentWord = currentWord + " " + words[currentIndex+1];
 					currentIndex += 1;
 				}
 			}
 			// Show word(s) on screen
-			wordElem.innerText = currentWord;
+			wordElem.innerText = currentWord.trim();
 			currentIndex += 1;
 		}
 	}, 1000 / speed);
@@ -68,6 +75,14 @@ function stopSpeedReader(){
 
 
 /* helper functions */
+function displayErrorMessage(){
+	getElement("message").style.display = "block";
+}
+
+function hideErrorMessage(){
+	getElement("message").style.display = "none";
+}
+
 function showReader(){
 	getElement("menu").style.display = "none";
 	getElement("reader").style.display = "block";
