@@ -8,32 +8,28 @@
 		<div>
 			<h1>Speed Reader</h1>
 			<div id="menu" class="card">
-				<textarea id="input">This is just some testing text so you can see how the application works and what you can do with it.
-					This is just some testing text so you can see how the application works and what you can do with it.
-					This is just some testing text so you can see how the application works and what you can do with it.
-					This is just some testing text so you can see how the application works and what you can do with it.
-				</textarea>
+				<textarea id="input">This simple application will, hopefully, allow you to read text at a faster rate than normal. The options below will allow you to change the speed of the reading and if words should be combined. By this I mean if two words appear next to each other, such as the words 'if' and 'a', they will be combined together and flashed up at the same time. Without this enabled every word will be shown one at a time. You can change the number of letters to change which words will be combined. Which will be the total letters of both words. So if you change the setting to 10 it will show two words together if the sum of their letters is less than or equal to 10. Feel free to copy and paste any text you like into this box and try reading it as fast as you can.</textarea>
 				<br/>
 				<button onclick="readClicked()" class="btn btn-menu">Read</button><br/>
 				<div class="option card">
 					<h2>Speed</h2>
 					<p>
 						<span>0</span>
-						<input type="range" min="1" max="30" id="speedRange" onchange="changeSpeedRange()"/>
+						<input type="range" min="1" max="30" value="5" id="speedRange" onchange="changeSpeedRange()"/>
 						</span >60</span>
 					</p>
-					<p id="speedRangeValue">16</p>
+					<p id="speedRangeValue">5</p>
 					<p class="muted">How many words to show per minute</p>
 				</div>
 				<div class="option card">
 					<h2>Combination</h2>
-					<input type="checkbox" id="combineSmallWordsCheckbox" onclick="combineWordsCheckboxClicked()" />Combine Small Words
+					<input type="checkbox" id="combineWordsCheckbox" onclick="combineWordsCheckboxClicked()" />Enabled
 					<p>
 						<span>0</span>
-						<input type="range" min="1" max="10" id="combineRange" onchange="changeCombineRange()" disabled/>
+						<input type="range" min="1" max="10" value="3" id="combineRange" onchange="changeCombineRange()" disabled/>
 						</span>10</span>
 					</p>
-					<p id="combineRangeValue">6</p>
+					<p id="combineRangeValue">3</p>
 					<p class="muted">Max number of letters allowed in one combination (of two words)</p>
 				</div>
 				<p id="message" class="error">Input cannot be empty</p>

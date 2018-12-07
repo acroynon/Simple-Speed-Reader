@@ -18,7 +18,7 @@ function stopClicked(){
 }
 
 function combineWordsCheckboxClicked(){
-	var checked = getElement("combineSmallWordsCheckbox").checked;
+	var checked = getElement("combineWordsCheckbox").checked;
 	getElement("combineRange").disabled = !checked;
 }
 
@@ -41,7 +41,7 @@ function startSpeedReader(text){
 	showReader();
 	var words = text.split(/\s+/);
 	var wordElem = getElement("word");
-	var combineWords = getElement("combineSmallWordsCheckbox").checked;
+	var combineWords = getElement("combineWordsCheckbox").checked;
 	var combineLength = getElement("combineRange").value;
 	var speed = getElement("speedRange").value;
 	var totalWords = words.length;
