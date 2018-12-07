@@ -4,6 +4,26 @@
 		<title>Speed Reader</title>
 	</head>
 	<body>
-		Hello World.
+		<div>
+			<h1>Speed Reader</h1>
+			<div>
+				<textarea id="input">Put some text in here</textarea>
+				<br/>
+				<button onclick="readClicked()">Read</button>
+				<p>
+					<span>0</span>
+					<input type="range" min="1" max="60" id="speedRange" />
+					</span>60</span>
+				</p>
+				<p id="speedRangeValue">50</p>
+				<br/>
+				<input type="checkbox" id="combineSmallWordsCheckbox" />Combine Small Words
+			</div>
+			<div>
+				<p id="word"></p>
+				<button onclick="stopClicked()">Stop</button>
+			</div>
+		</div>
+		<script src="js\main.js"></script>
 	</body>
 </html>
